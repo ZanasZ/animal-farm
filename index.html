@@ -241,5 +241,12 @@ render();
 setInterval(()=>{if(ymd()!==last){last=ymd();render()}},30000);
 </script>
 
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(console.error);
+  });
+}
+</script>
 </body>
 </html>
